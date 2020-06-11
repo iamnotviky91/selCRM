@@ -41,6 +41,8 @@ public class LoginPageTest extends TestBase {
 	@Test(priority = 3)
 	public void logintest() {
 		homepage=loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+		String Homepgtitle = homepage.verifyHomePageTitle();
+		Assert.assertEquals(Homepgtitle,"CRMPRO");
 	}
 	
 	@AfterMethod

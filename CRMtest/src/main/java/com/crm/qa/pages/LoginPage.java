@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,7 +39,10 @@ public class LoginPage extends TestBase{
 	public HomePage login(String un,String pwd) {
 		username.sendKeys(un);
 		password.sendKeys(pwd);
-		loginbtn.click();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",loginbtn);
+
+		
 		
 		return new HomePage();
 		
